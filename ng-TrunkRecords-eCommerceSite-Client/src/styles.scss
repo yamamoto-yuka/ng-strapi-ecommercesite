@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+$white:#F2F2F2;
+$black:#2F2E2E;
+$blue:#17488B;
+$orange:#F66419;
+$yellow:#E5E20A;
+$green:#83A47A;
+
+@mixin flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+* {
+    font-family:  Helvetica, sans-serif;
+}
+
+
+body{
+  background-color: $white;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+.wrapper {
+    height: 100vh;
+}
+
+.showMessage {
+    font-weight: bold;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+}

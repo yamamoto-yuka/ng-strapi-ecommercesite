@@ -1,0 +1,58 @@
+<div class="container p-4">
+  <h1>Admin Portal</h1>
+  <h2>Log In</h2>
+  <form #form="ngForm" (ngSubmit)="login(username_, password_)">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name</label>
+      <input
+        name="username"
+        #username_="ngModel"
+        [(ngModel)]="username"
+        id="username"
+        type="text"
+        class="form-control"
+        minlength="1"
+        required
+        placeholder="Username"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="username_.touched && username_.invalid"
+    >
+      Please enter your Username.
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        name="password"
+        #password_="ngModel"
+        [(ngModel)]="password"
+        id="password"
+        type="password"
+        class="form-control"
+        minlength="1"
+        required
+        placeholder="Password"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password_.touched && password_.invalid"
+    >
+     Please enter your password.
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      LogIn
+    </button>
+    <div
+      *ngIf="!loginStatus"
+      [style.display]="showMessage"
+      [class.error]="!loginStatus"
+    >
+      Your login credentials are incorect.
+    </div>
+  </form>
+</div>

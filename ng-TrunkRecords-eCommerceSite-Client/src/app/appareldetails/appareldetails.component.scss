@@ -1,0 +1,58 @@
+@import '../../styles.scss';
+
+main{
+  min-height: 90vh;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: $orange;
+}
+
+.container{
+  padding-bottom: 3rem;
+}
+
+.apparel-items{
+  padding: 1rem 3rem;
+}
+
+.apparel-item {
+  height: 400px;
+  padding: 2rem;
+  img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.apparel-item-title {
+  font-size: 2rem;
+  letter-spacing: 1.2px;
+  font-family: 'JetBrains Mono', monospace,sans-serif;
+  font-weight: bold;
+}
+.apparel-item-price {
+  font-weight: bold;
+  font-style: italic;
+}
+.apparel-btn {
+  width: 30%;
+  height: 50px;
+  color: #fff;
+  background-color: $black;
+  border: none;
+  transition: background-color .3s ease-in-out;
+}
+.apparel-btn:hover {
+  background-color: $orange;
+}
+.instock {
+  color: green;
+}
+.outofstock {
+  color: red;
+}

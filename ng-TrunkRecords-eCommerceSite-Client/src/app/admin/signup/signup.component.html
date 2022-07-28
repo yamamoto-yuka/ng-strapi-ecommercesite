@@ -1,0 +1,90 @@
+<div class="container p-4">
+  <h1>Admin Portal</h1>
+  <h2>Sign Up</h2>
+  <form #form="ngForm" (ngSubmit)="register(username_, email_, password_)">
+    <div class="mb-3">
+      <label for="username" class="form-label">User Name</label>
+      <input
+        name="username"
+        #username_="ngModel"
+        [(ngModel)]="username"
+        id="username"
+        type="text"
+        class="form-control"
+        minlength="1"
+        required
+        placeholder="Username"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="username_.touched && username_.invalid"
+    >
+      Please enter your Username.
+    </div>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Email</label>
+      <input
+        name="email"
+        #email_="ngModel"
+        [(ngModel)]="email"
+        id="email"
+        type="text"
+        class="form-control"
+        required
+        placeholder="Email"
+        pattern="[\w-]+@([\w-]+\.)+[\w-]+"
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="email_.touched && email_.invalid"
+    >
+    Please enter a valid formatted email.
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        name="password"
+        #password_="ngModel"
+        [(ngModel)]="password"
+        id="password"
+        type="password"
+        class="form-control"
+        minlength="1"
+        required
+        placeholder="Password" 
+      />
+    </div>
+    <div
+      class="alert alert-danger"
+      role="alert"
+      *ngIf="password_.touched && password_.invalid"
+    >
+      Password enter your password.
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+      Sign Up
+    </button>
+    | <a routerLink="/admin/login">LogIn</a>
+    <div
+      *ngIf="signupStatus"
+      [style.display]="showMessage"
+      [class.success]="signupStatus"
+    >
+      Sign up successful.
+    </div>
+    <div
+      *ngIf="!signupStatus"
+      [style.display]="showMessage"
+      [class.error]="!signupStatus"
+    >
+      Sorry, Something went wrong. Server responded with
+      {{ errorMessage.sqlMessage }}
+    </div>
+  </form>
+</div>

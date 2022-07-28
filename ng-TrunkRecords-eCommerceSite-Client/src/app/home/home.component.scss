@@ -1,0 +1,251 @@
+@import "../../styles.scss";
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item {
+  height: 90vh;
+  width: 100%;
+}
+.carousel-item-box {
+  height: 100%;
+  flex-direction: column;
+}
+.cta {
+  height: 20vh;
+  width: 100%;
+  padding: 3rem 1rem;
+  justify-content: space-around;
+  .cta-headline {
+    width: 40%;
+    h1 {
+      margin-bottom: 1rem;
+      letter-spacing: 1.2px;
+      font-family: "JetBrains Mono", monospace, sans-serif;
+      font-weight: bold;
+    }
+  }
+  .ctaBtn {
+    height: 100px;
+    width: 100px;
+    border: 1px solid $black;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-family: "JetBrains Mono", monospace, sans-serif;
+    font-weight: bold;
+    color: $white;
+    background-color: $black;
+    transition: all 0.3s ease-in-out;
+    svg {
+      height: 18px;
+      width: 18px;
+      fill: $white;
+    }
+  }
+  .ctaBtn:hover {
+    background-color: $orange;
+    border: 1px solid $orange;
+  }
+}
+.img-box {
+  height: 50vh;
+  width: 80%;
+  padding: 3rem;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.category {
+  min-height: 60vh;
+  flex-direction: column;
+}
+
+.category-items {
+  cursor: pointer;
+  padding: 2.5rem 0;
+  transition: color 0.3s ease-in-out;
+  .category-item {
+    height: 300px;
+    width: 300px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1rem;
+    background-color: $black;
+    h3 {
+      font-size: 3rem;
+      letter-spacing: 1.2px;
+      font-family: "JetBrains Mono", monospace, sans-serif;
+      font-weight: bold;
+      color: $white;
+      transition: color 0.3s ease-in-out;
+      svg {
+        height: 30px;
+        width: 30px;
+        fill: $white;
+        transition: fill 0.3s ease-in-out;
+      }
+    }
+    h3:hover,
+    h3 svg:hover {
+      color: $orange;
+      fill: $orange;
+    }
+  }
+}
+
+.category-items:hover {
+  .category-item {
+    h3 {
+      color: $black;
+      svg {
+        fill: $black;
+      }
+    }
+  }
+}
+
+.category-items:nth-child(1) :hover {
+  background-color: $orange;
+}
+.category-items:nth-child(2) :hover {
+  background-color: $blue;
+}
+
+.category-items:nth-child(3) :hover {
+  background-color: $yellow;
+}
+
+.category-items:nth-child(4) :hover {
+  background-color: $green;
+}
+
+// New items
+.newarrivals {
+  flex-direction: column;
+  padding: 5rem 0;
+  h2 {
+    font-size: 3rem;
+    letter-spacing: 1.2px;
+    font-family: "JetBrains Mono", monospace, sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+.newitems {
+  flex-direction: column;
+}
+
+.newitem {
+  height: 400px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 0;
+  background-color: $black;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.newitem:hover {
+  background-color: $orange;
+}
+
+.item-img {
+  width: 100%;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.item-desc {
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+  color: $white;
+  h3 {
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+    font-family: "JetBrains Mono", monospace, sans-serif;
+    font-weight: bold;
+  }
+  p {
+    font-size: 0.8rem;
+    svg {
+      height: 30px;
+      width: 30px;
+      fill: $white;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cta {
+    .cta-headline {
+      h1 {
+        font-size: 2.6rem;
+      }
+    }
+    .ctaBtn {
+      height: 130px;
+      width: 130px;
+    }
+  }
+
+  .category {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .category-items {
+    padding: 2rem 1rem;
+  }
+
+  .newitems {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .newitem {
+    margin: 2rem 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carousel-item-box {
+    flex-direction: row;
+  }
+  .cta {
+    height: 100%;
+    width: 50%;
+    .cta-headline {
+      h1 {
+        font-size: 2.7rem;
+      }
+    }
+    .ctaBtn {
+      height: 150px;
+      width: 150px;
+      font-size: 1rem;
+    }
+  }
+
+  .img-box {
+    height: 100%;
+    width: 50%;
+    padding: 5rem;
+  }
+
+  .newarrivals {
+    padding: 5rem 0 10rem 0;
+    h2 {
+      font-size: 3.5rem;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<div class="container mt-5">
+  <h2>Update</h2>
+  <div class="mb-3">
+    <label for="product_name" class="form-label">Product Name</label>
+    <input
+      [(ngModel)]="product_name"
+      type="text"
+      class="form-control"
+      id="product_name"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="product_desc" class="form-label">Product Description</label>
+    <input
+      [(ngModel)]="product_desc"
+      type="text"
+      class="form-control"
+      id="product_desc"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="product_price" class="form-label">Product Price</label>
+    <input
+      [(ngModel)]="product_price"
+      type="text"
+      class="form-control"
+      id="product_price"
+    />
+  </div>
+  <!-- <div class="mb-3">
+    <label for="product_image1" class="form-label">Image1</label>
+    <input
+      [(ngModel)]="product_image1"
+      type="text"
+      class="form-control"
+      id="product_image1"
+      aria-describedby="emailHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="product_image2" class="form-label">Image2</label>
+    <input
+      [(ngModel)]="product_image2"
+      type="text"
+      class="form-control"
+      id="product_image2"
+    />
+  </div> -->
+  <div class="mb-3">
+    <label for="product_quantity" class="form-label">Product Quantity</label>
+    <input
+      [(ngModel)]="product_quantity"
+      type="number"
+      class="form-control"
+      id="product_quantity"
+    />
+  </div>
+
+  <button (click)="update()" class="btn btn-primary">UPDATE</button> |
+  <button (click)="delete()" class="btn btn-danger">DELETE</button> |
+  <a routerLink="/admin/home"> Back to Admin Home</a>
+  <div
+    *ngIf="updateStatus"
+    [style.display]="showMessage"
+    [class.success]="updateStatus"
+  >
+    Update successful!
+  </div>
+  <div
+    *ngIf="!updateStatus"
+    [style.display]="showMessage"
+    [class.error]="!updateStatus"
+  >
+    Sorry, Something went wrong. Server responded with
+    {{ errorMessage.sqlMessage }}
+  </div>
+</div>

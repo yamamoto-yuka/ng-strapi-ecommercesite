@@ -1,0 +1,153 @@
+@url = http://localhost:4500
+
+GET http://localhost:4500/product
+
+###
+GET http://localhost:4500/product/1
+
+###
+POST  {{url}}/product
+Content-Type:  application/json
+
+{
+  "product_name":"test",
+  "product_desc":"test",
+  "product_price": 123,
+  "product_image1": "test",
+  "product_image2": "test",
+  "product_quantity": 12
+}
+
+
+###
+PUT {{url}}/product
+Content-Type:  application/json
+
+{
+  "ProductID":4,
+  "product_name":"test",
+  "product_desc":"test",
+  "product_price":123,
+  "product_image1":"test",
+  "product_image2":"test",
+  "product_quantity":1
+}
+
+###
+PUT {{url}}/displayupdate
+Content-Type:  application/json
+
+{
+  "ProductID":2
+}
+
+###
+GET {{url}}/product/2
+
+###
+DELETE  {{url}}/product/7
+
+
+###
+POST {{url}}/signup
+Content-Type: application/json
+
+{
+  "username":"Smith",
+  "password":234
+}
+
+###
+POST {{url}}/login
+Content-Type:  application/json
+
+{
+  "user_name":"Smith",
+  "password":234
+}
+
+
+###
+POST {{url}}/upload
+Content-Type: multipart/form-data; boundary=imageboundary
+
+--imageboundary
+Content-Disposition: form-data; name='image'; filename = "image1.jpg"
+Content-Type: image/png
+
+< ./image1.jpg
+--imageboundary
+
+
+
+### STRAPI APIs
+GET http://localhost:1337/api/apparelpages?populate=deep
+
+### 
+GET http://localhost:1337/api/apparelpages/1?populate=deep
+
+###
+GET https://cms.yukayamamoto.me/api/apparelpages?populate=deep
+
+###
+GET https://cms.yukayamamoto.me/api/apparelpages/1?populate=deep
+
+###
+POST https://cms.yukayamamoto.me/api/auth/local
+Content-Type: application/json
+
+{
+  "identifier": "bill@bill.com",
+  "password": "123456"
+}
+
+### 
+POST http://localhost:1337/api/apparelpages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU4OTc2NzM3LCJleHAiOjE2NjE1Njg3Mzd9.7PHiMMJi_XrVodOJLoZRtZ6OlsxCcKuhRMZ8zj2_gF0
+
+{
+  "data":{
+    "product_name": "testitem",
+    "product_desc": "testitem description",
+    "product_price": 12.59,
+    "product_quantity": 12,
+    "product_display": true
+  }
+}
+
+
+### 
+PUT https://cms.yukayamamoto.me/api/apparelpages/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU4OTc3MzIyLCJleHAiOjE2NjE1NjkzMjJ9.Lk_rHWjX9pb1b8R3sO-8M-rZEHi7OmU2_JUm_uVUVDk
+Content-Type: application/json
+
+{
+  "data":{
+    "product_name": "testitem",
+    "product_desc": "testitem description",
+    "product_price": 12.59,
+    "product_quantity": 12,
+    "product_display": true
+  }
+}
+
+
+### 
+PUT https://cms.yukayamamoto.me/api/apparelpages/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU4OTc3MzIyLCJleHAiOjE2NjE1NjkzMjJ9.Lk_rHWjX9pb1b8R3sO-8M-rZEHi7OmU2_JUm_uVUVDk
+Content-Type: application/json
+
+{
+  "data":{
+    "product_display": false
+  }
+}
+
+
+
+### 
+DELETE https://cms.yukayamamoto.me/api/apparelpages/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU4OTc3MzIyLCJleHAiOjE2NjE1NjkzMjJ9.Lk_rHWjX9pb1b8R3sO-8M-rZEHi7OmU2_JUm_uVUVDk
+
+
