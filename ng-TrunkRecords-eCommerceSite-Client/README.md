@@ -1,5 +1,4 @@
-
-![Trunk Records](https://user-images.githubusercontent.com/84278263/183385498-aafa09c8-59bc-4cb8-abe3-f16af8a9639e.png)
+![Trunk Records](https://user-images.githubusercontent.com/84278263/183485196-dfe536ae-b0ae-4436-b2fd-e9dca7f69202.png)
 
 ### Demo site
 [Trunk Records](https://yukayamamoto.me/trunkrecords)
